@@ -1,0 +1,91 @@
+:root {
+    --rojo-oscuro: #d00000;
+    --white: 
+}
+
+.main {
+    position: relative;
+    z-index: 50;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.corazon {
+    position: relative;
+    z-index: 100;
+    margin: auto;
+    margin-top: 50vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--rojo-oscuro);
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);
+    animation-name: latir;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+.corazon::before {
+    content: "";
+    background: var(--rojo-oscuro);
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 25px;
+}
+
+.corazon::after {
+    content: "";
+    background: var(--rojo-oscuro);
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0;
+}
+
+@keyframes latir {
+    0% {
+        transform: scale(1.5) rotate(-45deg);
+    }
+
+    50% {
+        transform: scale(1) rotate(-45deg);
+    }
+
+    100% {
+        transform: scale(.6) rotate(-45deg);
+    }
+}
+
+
+
+
+
+
+@media only screen and (min-width: 1280px) {
+    @keyframes latir {
+        0% {
+            transform: scale(3) rotate(-45deg);
+        }
+    
+        50% {
+            transform: scale(2) rotate(-45deg);
+        }
+    
+        100% {
+            transform: scale(1.5) rotate(-45deg);
+        }
+    }
+}
